@@ -24,11 +24,55 @@
  *
  */
 
-(function(){
+(function() {
 
-  $(function(){
+  $(function() {
 
-  	//code goes here
+
+    $("#addStudentForm").validate({
+      errorClass: "text-danger",
+      rules: {
+        // at least 15€ when bonus material is included
+        first_name: {
+          required: true,
+          minlength: 2
+        },
+        last_name: {
+          required: true,
+          minlength: 2
+        },
+        gpa: {
+          min: 0,
+          max: 5
+        },
+        sat: {
+          min: 0,
+          max: 2400
+        },
+        start_date: {
+          dateISO: true
+        }
+      },
+      messages: {
+        first_name: {
+          minlength: "Please enter at least 2 characters"
+        },
+        last_name: {
+          minlength: "Please enter at least 2 characters"
+        },
+        gpa: {
+          min: "You can't have a negative GPA, dummy",
+          max: "Nobody is that smart. 5.0 is the max GPA"
+        },
+        sat: {
+          min: "You can't have a negative SAT, dummy",
+          max: "Nobody is that smart. 2400 is the max SAT"
+        },
+        start_date: {
+          dateISO: "Date needs to be in YYYY-MM-DD format"
+        }
+      }
+    });
 
   })
 

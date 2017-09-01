@@ -27,12 +27,20 @@
  *
  */
 
- (function(){
+(function() {
 
-   $(function(){
+  $(function() {
 
-   	//code goes here
+    $('#student_id').selectpicker({
+      style: 'btn-info',
+      size: 4,
+      liveSearch : true,
+      tickIcon : 'glyphicon-user',
+      showTick : true,
+      header: 'Person to delete'
+    });
 
-   })
 
- })();
+  })
+
+})();

@@ -30,12 +30,21 @@
  *
  */
 
- (function(){
+(function() {
 
-   $(function(){
+  $(function() {
 
-   	//code goes here
+    $(document).ready(function() {
+      $('#studentTable').DataTable({
+        dom: 'Bfrtip',
+        colReorder: true,
+        "scrollX": true,
+        buttons: [
+          'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+      });
+    });
 
-   })
+  })
 
- })();
+})();
